@@ -4,16 +4,36 @@
 package org.example;
 
 public class App {
-  // This is a sample function just to show you how everything works
-  // You should create your own classes with business logic
-  // You can delete the getGreeting() function when you submit your lab
-  public String getGreeting() {
-      return "Hello World!";
-  }
-
-  // This is a sample main function just to show you how everything works
-  // You can update it with a driver program for your solution
   public static void main(String[] args) {
-      System.out.println(new App().getGreeting());
+      GroceryCounter counter = new GroceryCounter();
+
+      System.out.println(counter.total());
+
+      counter.tens();
+      counter.tens();
+      counter.hundreths();
+
+      System.out.println(counter.total());
+      System.out.println(counter.overflows());
+
+      for (int i = 0; i < 35; i++) {
+          counter.ones();
+      }
+
+      System.out.println(counter.total());
+      System.out.println(counter.overflows());
+
+      for (int i = 0; i < 100; i++) {
+          counter.ones();
+      }
+
+      System.out.println(counter.total());
+      System.out.println(counter.overflows());
+
+      counter.clear();
+
+      System.out.println(counter.total());
+      System.out.println(counter.overflows());
+
   }
 }
